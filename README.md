@@ -9,8 +9,7 @@ It is built on top of the DeiT [official repository](https://github.com/facebook
 
 ## Introduction
 
-Transformers have achieved remarkable success in both natural language processing (NLP) and computer vision (CV).  
-However, deep transformer models can suffer from **over-smoothing**, where token representations converge to similar values as they pass through successive blocks.  
+Transformers have achieved remarkable success in both natural language processing (NLP) and computer vision (CV). However, deep transformer models can suffer from **over-smoothing**, where token representations converge to similar values as they pass through successive blocks.  
 
 We reveal an equivalence between the hidden-state dynamics of stacked attention layers and graph-diffusion on a complete graph. From this viewpoint, over-smoothing arises from the dissipative nature of diffusion.  
 **Wavy Transformer** mitigates this issue by introducing:
