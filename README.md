@@ -2,18 +2,29 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-The official implementation of [Wavy Transformer]().
+This repository contains the **official implementation** of **Wavy Transformer**&nbsp;<!-- TODO: add arXiv/DOI link when available -->.  
+It is built on top of the DeiT [official repository](https://github.com/facebookresearch/deit) and the FeatScale [official repository](https://github.com/VITA-Group/ViT-Anti-Oversmoothing).
 
-
-This repository is built based on DeiT [official repository](https://github.com/facebookresearch/deit) and FeatScale [official repository](https://github.com/VITA-Group/ViT-Anti-Oversmoothing).
+---
 
 ## Introduction
 
-Vision Transformer (ViT) has recently demonstrated promise in computer vision problems. However, unlike Convolutional Neural Networks (CNN), it is known that the performance of ViT saturates quickly with depth increasing, due to the observed attention collapse or patch uniformity. Despite a couple of empirical solutions, a rigorous framework studying on this scalability issue remains elusive. In this paper, we first establish a  rigorous theory framework to analyze ViT features from the Fourier spectrum domain. We show that the self-attention mechanism inherently amounts to a low-pass filter, which indicates when ViT scales up its depth, excessive low-pass filtering will cause feature maps to only preserve their Direct-Current (DC) component. We then propose two straightforward yet effective techniques to mitigate the undesirable low-pass limitation. The first technique, termed AttnScale, decomposes a self-attention block into low-pass and high-pass components, then rescales and combines these two filters to produce an all-pass self-attention matrix. The second technique, termed FeatScale, re-weights feature maps on separate frequency bands to amplify the high-frequency signals. Both techniques are efficient and hyperparameter-free, while effectively overcoming relevant ViT training artifacts such as attention collapse and patch uniformity. By seamlessly plugging in our techniques to multiple ViT variants, we demonstrate that they consistently help ViTs benefit from deeper architectures, bringing up to 1.1% performance gains "for free" (e.g., with little parameter overhead).
+Transformers have achieved remarkable success in both natural language processing (NLP) and computer vision (CV).  
+However, deep transformer models can suffer from **over-smoothing**, where token representations converge to similar values as they pass through successive blocks.  
+
+We reveal an equivalence between the hidden-state dynamics of stacked attention layers and graph-diffusion on a complete graph. From this viewpoint, over-smoothing arises from the dissipative nature of diffusion.  
+**Wavy Transformer** mitigates this issue by introducing:
+
+* a novel attention layer based on **second-order wavy dynamics**,  
+* a feed-forward network and normalization layer that preserve the physical state–velocity relationship implied by the chain rule.
+
+Across diverse NLP and CV benchmarks, Wavy Transformer consistently improves performance **with minimal extra parameters and no additional hyper-parameter tuning**.
 
 <p align="center">
-  <img src="figures/wavy_block.png" width="500">
+  <img src="figures/wavy_block.png" width="500" alt="Wavy block illustration">
 </p>
+
+---
 
 ## Getting Started
 
@@ -98,6 +109,8 @@ main.py --auto_reload --model featscale_tiny_12_wave --batch-size 256 --clip-gra
 --data-path </data_path> --data-set IMNET --input-size 224 \
 --output_dir ./logs/imnet1k_featscale_tiny_12_wave
 ```
+</details>
+
 
 ### Pre-trained Models
 
