@@ -132,7 +132,9 @@ To analyze oversmoothing behavior of our pre-trained models, please use oversmoo
 
 ## Citation
 
-If you find this work or our code implementation helpful for your own resarch or work, please cite our paper.
-```
+A formal citation will be provided here as soon as our paper is publicly available  
+(arXiv / conference proceedings, currently in preparation).  
+In the meantime, if you find *Wavy Transformer* useful for your research or applications,
+please consider pointing to this repository.
 
-```
+<!-- BibTeX entry will appear here after submission -->
