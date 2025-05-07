@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains the **official implementation** of **Wavy Transformer**&nbsp;<!-- TODO: add arXiv/DOI link when available -->.  
-It is built on top of the DeiT [official repository](https://github.com/facebookresearch/deit) and the FeatScale [official repository](https://github.com/VITA-Group/ViT-Anti-Oversmoothing).
+It is based on DeiT [official repository](https://github.com/facebookresearch/deit) and the FeatScale [official repository](https://github.com/VITA-Group/ViT-Anti-Oversmoothing).
 
 ---
 
