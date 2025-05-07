@@ -20,7 +20,7 @@ We reveal an equivalence between the hidden-state dynamics of stacked attention 
 Across diverse NLP and CV benchmarks, Wavy Transformer consistently improves performance **with minimal extra parameters and no additional hyper-parameter tuning**.
 
 <p align="center">
-  <img src="figures/wavy_block.png" width="500" alt="Wavy block illustration">
+  <img src="figures/wavy_block.png" width="650" alt="Wavy block illustration">
 </p>
 
 ---
