@@ -1,0 +1,40 @@
+# config.yaml
+model:
+  vocab_size: 30522
+  hidden_size: 256           # さらに縮小
+  intermediate_size: 1024    # hidden_size に合わせた縮小
+  num_hidden_layers: 24      # 層数は増やすが、各層の計算量は軽量化
+  num_attention_heads: 4     # hidden_size に合わせて調整
+  max_position_embeddings: 512
+  dropout_prob: 0.1
+  residual_type: "mix_simp" 
+  use_sparse_attention: false
+  window_size: 4
+  tau: 0.5
+  add_mass: false
+  use_attnscale: false
+  use_featscale: false
+
+training:
+  max_seq_length: 128        # 検証時のシークエンス長を短縮
+  per_device_batch_size: 32
+  gradient_accumulation_steps: 1
+  num_epochs: 40
+  learning_rate: 0.00005
+  max_steps: 100000
+  save_dir: "/workspace/nas/oversmooth_bert/bert_checkpoints/tau=0.5_oscillator_Chain_layers=24_add_wave_alpha_vec"
+  log_save_dir: "/workspace/nas/oversmooth_bert/logs/tau=0.5_oscillator_Chain_layers=24_add_wave_alpha_vec"
+
+data:
+  file_path: "datasets/pretraining/data_100000.txt" # フルデータ用ファイル（常に書き出す）
+  dupe_factor: 3
+  short_seq_prob: 0.1
+  masked_lm_prob: 0.15
+  max_predictions_per_seq: 20
+  nsp_neg_prob: 0.5
+  max_documents: 100000
+  persistent_cache_path: "/workspace/nas/oversmooth_bert/datasets/pretraining/preprocessed_dataset_100000_2.pkl"
+
+random_seed: 42
+
+small_experiment: false

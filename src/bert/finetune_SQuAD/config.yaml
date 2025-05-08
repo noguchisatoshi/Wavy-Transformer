@@ -1,0 +1,23 @@
+model:
+  vocab_size: 30522
+  hidden_size: 256
+  intermediate_size: 1024
+  num_hidden_layers: 24
+  num_attention_heads: 4
+  max_position_embeddings: 512
+  dropout_prob: 0.1
+  residual_type: "mix"   # "diffuse", "wave", "wave_simp"
+  tau: 0.5
+  pretrain_model_path: "./mix_simp_base_model_checkpoint.pt"
+
+
+training:
+  max_seq_length: 128
+  per_device_batch_size: 24
+  gradient_accumulation_steps: 1
+  num_epochs: 2
+  learning_rate: 0.00005
+  max_steps: 100000
+  warmup_proportion: 0.1
+  weight_decay: [0.1, 0.01]  # 0.1, bias・LayerNorm.weight: 0.01
+  lr_scheduler: "linear"

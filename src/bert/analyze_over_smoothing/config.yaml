@@ -1,0 +1,24 @@
+model:
+  vocab_size: 30522
+  hidden_size: 256
+  intermediate_size: 1024
+  num_hidden_layers: 24
+  num_attention_heads: 4
+  max_position_embeddings: 512
+  hidden_dropout_prob: 0.1
+  attention_probs_dropout_prob: 0.1
+  num_labels: 2
+  residual_type: "mix"   # "diffuse", "wave", "mix"
+  tau: 0.5
+
+training:
+  batch_size: 1              # 分析はバッチサイズ 1 推奨
+  max_seq_length: 128
+
+data:
+  # text_file: "/workspace/nas/oversmooth_bert/datasets/analyze_oversmoothing/wikibio_data_2000.txt"
+  text_file: "/workspace/nas/oversmooth_bert/datasets/pretraining/data_100.txt"
+  max_documents: "full"
+
+output:
+  output_dir: "./finetune_SQuAD/results"
