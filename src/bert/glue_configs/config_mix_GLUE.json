@@ -1,0 +1,40 @@
+{
+  "random_seed": 42,
+  "data_type": "cola",
+  
+  "run_all_glue": true,
+  "glue_tasks": [
+    "cola",
+    "sst2",
+    "mrpc",
+    "qqp",
+    "mnli",
+    "mnli_matched",
+    "mnli_mismatched",
+    "qnli",
+    "rte",
+    "wnli",
+    "stsb"
+  ],
+  
+  "vocab_size": 30522,
+  "num_labels": 2,
+  "hidden_size": 256,
+  "intermediate_size": 1024,
+  "num_hidden_layers": 24,
+  "num_attention_heads": 4,
+  "max_position_embeddings": 512,
+  "dropout_prob": 0.1,
+  "tau": 0.5,
+  
+  "pretrained_model": "./bert_checkpoints/tau=0.5_layers=24/mix_base_model_checkpoint.pt",
+  "result_dir": "results_mix_seed",
+  
+  "batch_size": 32,
+  "learning_rate": 0.00005,
+  "weight_decay": 0.1,
+  "num_epochs": 3,
+  
+  "experiment_name": "mix_experiment_seed",
+  "residual_type": "mix"
+}

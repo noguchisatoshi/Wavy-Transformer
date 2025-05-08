@@ -1,0 +1,35 @@
+# config.yaml
+model:
+  vocab_size: 30522
+  hidden_size: 256           
+  intermediate_size: 1024    
+  num_hidden_layers: 24     
+  num_attention_heads: 4     
+  max_position_embeddings: 512
+  dropout_prob: 0.1
+  residual_type: "mix" 
+  tau: 0.5
+
+training:
+  max_seq_length: 128     
+  per_device_batch_size: 32
+  gradient_accumulation_steps: 1
+  num_epochs: 40
+  learning_rate: 0.00005
+  max_steps: 100000
+  save_dir: "./bert_checkpoints/tau=0.5_layers=24"
+  log_save_dir: "./logs/tau=0.5_layers=24"
+
+data:
+  file_path: "datasets/pretraining/data_100.txt"
+  dupe_factor: 3
+  short_seq_prob: 0.1
+  masked_lm_prob: 0.15
+  max_predictions_per_seq: 20
+  nsp_neg_prob: 0.5
+  max_documents: 100000
+  persistent_cache_path: "/workspace/nas/oversmooth_bert/datasets/pretraining/preprocessed_dataset_100.pkl"
+
+random_seed: 42
+
+small_experiment: false

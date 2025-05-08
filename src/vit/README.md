@@ -9,7 +9,7 @@ It is based on DeiT [official repository](https://github.com/facebookresearch/de
 First of all, clone our repository locally:
 
 ```
-git clone https://github.com/VITA-Group/ViT-Anti-Oversmoothing.git
+git clone https://github.com/noguchisatoshi/Wavy-Transformer.git
 ```
 
 Then, install the following Python libraries which are required to run our code:
