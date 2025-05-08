@@ -24,7 +24,7 @@ class JointLayerNorm(nn.Module):
         v_norm = v_norm * self.gamma
         return x_norm, v_norm
 
-class CustomBertSelfAttention(nn.Module, SparseWindowAttentionMixin):
+class CustomBertSelfAttention(nn.Module):
     def __init__(
         self, 
         hidden_size: int, 

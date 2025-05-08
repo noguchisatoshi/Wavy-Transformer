@@ -127,7 +127,6 @@ class CustomBertLayer(nn.Module):
                  ):
         super().__init__()
         self.residual_type = residual_type
-        self.add_mass = add_mass
         self.apply_velocity_transform = apply_velocity_transform
 
         self.attention = CustomBertSelfAttention(

@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 from torch.utils.data import DataLoader
 from transformers import BertTokenizer, BertConfig
 
-sys.path.append(os.path.join(os.getcwd(), "src"))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.metrics import (
-    compute_cosine_similarity
+    compute_cosine_similarity,
     save_over_smoothing_image,
     save_energy_transition_image,
     compute_dirichlet_energy,
@@ -204,9 +204,6 @@ def parse_max_documents(value):
 def main():
     parser = argparse.ArgumentParser(description="Analyze over-smoothing in BERT models using text data")
     parser.add_argument("--config", type=str, required=True, help="Path to YAML configuration file")
-    parser.add_argument("--residual_type", type=str, required=True,
-                        choices=["diffuse", "wave", "mix", "wave_simp", "mix_simp"],
-                        help="Residual type to use for the custom model")
     parser.add_argument("--max_documents", type=parse_max_documents, default=10000,
                         help="Maximum number of documents to process. Use 'full' to process all documents.")
     parser.add_argument("--metric", type=str, choices=["cosine", "energy"], default=None,
@@ -241,13 +238,14 @@ def main():
     model_config = BertConfig(**config_dict)
     
     # --- Initialize Model ---
-    tau = model_params.get("tau", 0.5)
+    tau = model_params.get("tau", 1.0)
+    residual_type = model_params.get("residual_type", "diffuse")
     pretrain_model_path = model_params.get("pretrain_model_path", None)
-    checkpoint_path = f"./finetune_models/finetune_model_{args.residual_type}_24_v2.pt"
+    checkpoint_path = f"./finetune_SQuAD/finetune_models/finetune_model_{residual_type}.pt"
         
     model = CustomBertForSequenceClassification(
         model_config,
-        residual_type=args.residual_type,
+        residual_type=residual_type,
         tau=tau,
     )
 
@@ -295,22 +293,22 @@ def main():
     if args.metric is None:
         analyze_over_smoothing_cosine(
             model, tokenizer, dataset, batch_size=1,
-            device=device, output_dir=output_dir, residual_type=args.residual_type, args=args
+            device=device, output_dir=output_dir, residual_type=residual_type, args=args
         )
         analyze_over_smoothing_energy(
             model, tokenizer, dataset, batch_size=1,
-            device=device, output_dir=output_dir, residual_type=args.residual_type,
+            device=device, output_dir=output_dir, residual_type=residual_type,
             tau=tau, energy_metric=args.energy_metric, args=args
         )
     elif args.metric == "cosine":
         analyze_over_smoothing_cosine(
             model, tokenizer, dataset, batch_size=1,
-            device=device, output_dir=output_dir, residual_type=args.residual_type, args=args
+            device=device, output_dir=output_dir, residual_type=residual_type, args=args
         )
     elif args.metric == "energy":
         analyze_over_smoothing_energy(
             model, tokenizer, dataset, batch_size=1,
-            device=device, output_dir=output_dir, residual_type=args.residual_type,
+            device=device, output_dir=output_dir, residual_type=residual_type,
             tau=tau, energy_metric=args.energy_metric, args=args
         )
 

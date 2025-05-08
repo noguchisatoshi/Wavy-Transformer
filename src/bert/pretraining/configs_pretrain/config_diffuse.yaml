@@ -21,7 +21,7 @@ training:
   log_save_dir: "./logs/tau=1.0_layers=24"
 
 data:
-  file_path: "datasets/pretraining/data_100.txt"
+  file_path: "./nas/oversmooth_bert/datasets/pretraining/data_100.txt nas/oversmooth_bert/datasets/pretraining/preprocessed_dataset_100.pkldatasets/pretraining/data_100.txt"
   dupe_factor: 3
   short_seq_prob: 0.1
   masked_lm_prob: 0.15
@@ -29,6 +29,7 @@ data:
   nsp_neg_prob: 0.5
   max_documents: 100000
   persistent_cache_path: "./datasets/pretraining/preprocessed_dataset_100.pkl"
+
 
 random_seed: 42
 

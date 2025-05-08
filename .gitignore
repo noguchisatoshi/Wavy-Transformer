@@ -2,3 +2,8 @@
 # Ignore Python byte-code
 __pycache__/
 *.py[co]
+
+# large model paramter files
+src/bert/datasets/
+src/bert/finetune_SQuAD/finetune_models/
+src/bert/bert_checkpoints/

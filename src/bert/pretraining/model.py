@@ -11,7 +11,6 @@ class CustomBertEncoder(nn.Module):
                  num_attention_heads=12, dropout_prob=0.1, residual_type="diffuse", tau=1.0):
         super().__init__()
         self.residual_type = residual_type
-        self.add_mass = add_mass
         self.layer = nn.ModuleList([
             CustomBertLayer(
                 hidden_size=hidden_size,

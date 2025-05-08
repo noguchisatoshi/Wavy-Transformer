@@ -24,10 +24,10 @@ datasets
 
 1. **Download and process pretraining data**
 
-   We provide a script `pretraining/download_and_process.py` to automatically download and preprocess the BooksCorpus and Wikipedia datasets. It saves the combined documents to `datasets/pretraining/data.txt`.
+   We provide a script `pretraining/download_dataset.py` to automatically download and preprocess the BooksCorpus and Wikipedia datasets. It saves the combined documents to `datasets/pretraining/data.txt`.
 
    ```bash
-   python pretraining/download_and_process.py --max_documents 80000
+   python pretraining/download_dataset.py --max_documents 100000
    ```
 
 2. **Prepare GLUE/SQ2AD data**
@@ -41,17 +41,16 @@ datasets
 Pre-train BERT-base from scratch using `pretrain.py`:
 
 ````bash
-python pretrain.py --config pretraining/configs_pretrain/config_diffuse.yaml
+torchrun --master_port=29700 --nproc_per_node=2 pretrain.py --config pretraining/configs_pretrain/config_diffuse.yaml
 ````
 
 ### 2. Fine-tuning on GLUE
 
-Fine-tune on GLUE tasks using `run_glue.py`:
+Fine-tune on GLUE tasks using `run_glue.py`, where `-rs` is used specify random seeds:
 
 <details>
 ```bash
-python run_glue.py --config config_diffuse_glue.json \
-        --mode train -rs 41 42 43
+python run_glue.py --config glue_configs/config_diffuse_GLUE.json --mode train -rs 41 42 43
 ````
 </details>
 
@@ -68,7 +67,7 @@ python finetune_SQuAD/finetune.py --config_file finetune_SQuAD/config.yaml
 Analyze oversmoothing behavior using `analyze_over_smoothing/analyze_over_smoothing.py`:
 
 ```bash
-python analyze_over_smoothing/analyze_over_smoothing.py --residual_type mix --config analyze_over_smoothing/config.yaml
+python analyze_over_smoothing/analyze_over_smoothing.py --config analyze_over_smoothing/config.yaml
 ```
 
 ## Scripts Explanation
