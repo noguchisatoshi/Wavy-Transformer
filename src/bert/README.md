@@ -77,9 +77,3 @@ python analyze_over_smoothing/analyze_over_smoothing.py --residual_type mix --co
 * `run_glue.py`: scripts for fine-tuning on GLUE benchmark.
 * `finetune.py`: scripts for fine-tuning on SQ2AD dataset.
 * `analyze_over_smoothing.py`: compute pairwise representation similarities across layers.
-
-## License
-
-This project is licensed under the MIT License.
-
-''''

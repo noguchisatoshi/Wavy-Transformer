@@ -25,10 +25,16 @@ Across diverse NLP and CV benchmarks, Wavy Transformer consistently improves per
 
 ## Contents
 
+This repository comprises two main components:
 
+* **NLP Tasks**: Everything related to pretraining the BERT-base model, fine-tuning on downstream benchmarks (GLUE and SQ2AD), and analyzing oversmoothing behavior.
+* **CV Tasks**: Scripts and examples for ImageNet object classification using Vision Transformers, including training, evaluation, and analyzing oversmoothing behavior.
 
 ## Citation
 
 A formal citation will be provided here as soon as our paper is publicly available (arXiv / conference proceedings, currently in preparation). In the meantime, if you find *Wavy Transformer* useful for your research or applications, please consider pointing to this repository.
 
 <!-- BibTeX entry will appear here after submission -->
+
+
+
