@@ -75,6 +75,11 @@ python analyze_over_smoothing/analyze_over_smoothing.py --config analyze_over_sm
 - [Wave pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/wave_base_model_checkpoint.pt?download=true)
 - [Mix pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/mix_base_model_checkpoint.pt?download=true)
 
+### Finetune model for each residual connection
+- [Diffuse finetune model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/finetune_SQuAD/finetune_model_diffuse.pt?download=true)
+- [Wave finetune model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/finetune_SQuAD/finetune_model_wave.pt?download=true)
+- [Mix finetune model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/finetune_SQuAD/finetune_model_mix.pt?download=true)
+
 
 ## Scripts Explanation
 

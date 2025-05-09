@@ -105,3 +105,6 @@ To analyze oversmoothing behavior of our pre-trained models, please use oversmoo
     --batch-size 64 --num-workers 8 --pin-mem \
     --use-all --output-dir .log/oversmooth_results/featscale_tiny_12_wave
 ```
+## model parameters
+- [DeiT-Tiny + Wave Transformer](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/vit/tiny_12_wave.pth?download=true)
+- [DeiT-Tiny + Wavy Transformer + FeatScale](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/vit/tiny_12_wave%2Bfeatscale.pth?download=true)
