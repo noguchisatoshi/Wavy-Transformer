@@ -7,3 +7,6 @@ __pycache__/
 src/bert/datasets/
 src/bert/finetune_SQuAD/finetune_models/
 src/bert/bert_checkpoints/
+
+# script for push to hugging_face
+src/huggingface_push.py
