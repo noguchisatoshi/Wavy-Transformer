@@ -69,7 +69,7 @@ Analyze oversmoothing behavior using `analyze_over_smoothing/analyze_over_smooth
 ```bash
 python analyze_over_smoothing/analyze_over_smoothing.py --config analyze_over_smoothing/config.yaml
 ```
-## model parameters
+## Model parameters
 ### Pretraining models for each residual connection
 - [Diffuse pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/diffuse_base_model_checkpoint.pt?download=true)
 - [Wave pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/wave_base_model_checkpoint.pt?download=true)
