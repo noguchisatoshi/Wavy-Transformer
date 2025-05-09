@@ -71,7 +71,9 @@ python analyze_over_smoothing/analyze_over_smoothing.py --config analyze_over_sm
 ```
 ## model parameters
 ### Pretraining models for each residual connection
-- [Diffuse base model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/diffuse_base_model_checkpoint.pt?download=true)
+- [Diffuse pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/diffuse_base_model_checkpoint.pt?download=true)
+- [Wave pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/wave_base_model_checkpoint.pt?download=true)
+- [Mix pretrain model](https://huggingface.co/ngtsts/Wavy-Transformer/resolve/main/bert/mix_base_model_checkpoint.pt?download=true)
 
 
 ## Scripts Explanation
