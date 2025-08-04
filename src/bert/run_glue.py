@@ -122,6 +122,18 @@ def initialize_model(args: argparse.Namespace, config: Dict[str, Any],
 
     model.to(device)
 
+    pretrained = config.get("pretrained_model", None)
+    if args.mode == "train" and pretrained:
+        ckpt_path = Path(pretrained)
+        if ckpt_path.exists():
+            checkpoint = torch.load(ckpt_path, map_location=device)
+            load_res = model.bert.load_state_dict(checkpoint, strict=False)
+            logger.info(f"Loaded pretrained weights from {ckpt_path}")
+            logger.info(f"Missing keys: {load_res.missing_keys}")
+            logger.info(f"Unexpected keys: {load_res.unexpected_keys}")
+        else:
+            logger.warning(f"pretrained_model path does not exist: {ckpt_path}")
+
     if args.mode == "evaluate" and not skip_load:
         exp_name = config["experiment_name"]
         if dt in ("mnli_matched", "mnli_mismatched"):
