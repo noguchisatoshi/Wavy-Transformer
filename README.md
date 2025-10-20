@@ -42,7 +42,7 @@ In the meantime, if you find *Wavy Transformer* useful, please cite the arXiv pr
 
 ### BibTeX (temporary, arXiv)
 ```bibtex
-@inproceedings{wavy_transformer_neurips_20XX,
+@inproceedings{wavy_transformer,
   title     = {Wavy Transformer},
   author    = {Satoshi Noguchi, Yoshinobu Kawahara},
   booktitle = {Proceedings of the Neural Information Processing Systems (NeurIPS) Conference},
