@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the **official implementation** of **Wavy Transformer**&nbsp;<!-- TODO: add arXiv/DOI link when available -->.  
+This repository contains the **official implementation** of **Wavy Transformer**, accepted at **NeurIPS**. See our paper on [arXiv](https://arxiv.org/abs/2508.12787). 
 
 ---
 
@@ -32,9 +32,21 @@ This repository comprises two main components:
 
 ## Citation
 
-A formal citation will be provided here as soon as our paper is publicly available (arXiv / conference proceedings, currently in preparation). In the meantime, if you find *Wavy Transformer* useful for your research or applications, please consider pointing to this repository.
+We will update this section with the **formal citation** once the paper and **NeurIPS** metadata are publicly available.
+In the meantime, if you find *Wavy Transformer* useful, please cite the arXiv preprint (once live) or link to this repository.
 
-<!-- BibTeX entry will appear here after submission -->
+- Paper: [arXiv](https://arxiv.org/abs/2508.12787).
+- Code: this repository
 
+<!-- TODO: Replace the BibTeX below with the NeurIPS proceedings entry after the conference metadata is public. -->
 
-
+### BibTeX (temporary, arXiv)
+```bibtex
+@inproceedings{wavy_transformer_neurips_20XX,
+  title     = {Wavy Transformer},
+  author    = {Satoshi Noguchi, Yoshinobu Kawahara},
+  booktitle = {Proceedings of the Neural Information Processing Systems (NeurIPS) Conference},
+  year      = {2025},
+  note      = {To be updated with volume, pages, and publisher after public release}
+}
+}
