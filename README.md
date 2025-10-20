@@ -49,4 +49,3 @@ In the meantime, if you find *Wavy Transformer* useful, please cite the arXiv pr
   year      = {2025},
   note      = {To be updated with volume, pages, and publisher after public release}
 }
-}
