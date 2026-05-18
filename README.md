@@ -32,20 +32,20 @@ This repository comprises two main components:
 
 ## Citation
 
-We will update this section with the **formal citation** once the paper and **NeurIPS** metadata are publicly available.
-In the meantime, if you find *Wavy Transformer* useful, please cite the arXiv preprint (once live) or link to this repository.
+If you find *Wavy Transformer* useful, please cite the NeurIPS proceedings paper.
 
-- Paper: [arXiv](https://arxiv.org/abs/2508.12787).
+- Paper: [arXiv](https://arxiv.org/abs/2508.12787)
+- NeurIPS: [poster page](https://neurips.cc/virtual/2025/loc/san-diego/poster/116533)
 - Code: this repository
 
-<!-- TODO: Replace the BibTeX below with the NeurIPS proceedings entry after the conference metadata is public. -->
+### BibTeX
 
-### BibTeX (temporary, arXiv)
 ```bibtex
-@inproceedings{wavy_transformer,
-  title     = {Wavy Transformer},
-  author    = {Satoshi Noguchi, Yoshinobu Kawahara},
-  booktitle = {Proceedings of the Neural Information Processing Systems (NeurIPS) Conference},
-  year      = {2025},
-  note      = {To be updated with volume, pages, and publisher after public release}
+@article{wavy_transformer,
+  title   = {Wavy Transformer},
+  author  = {Noguchi, Satoshi and Kawahara, Yoshinobu},
+  journal = {Advances in Neural Information Processing Systems},
+  volume  = {38},
+  pages   = {126296--126325},
+  year    = {2026}
 }
