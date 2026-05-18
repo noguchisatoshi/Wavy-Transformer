@@ -47,5 +47,5 @@ If you find *Wavy Transformer* useful, please cite the NeurIPS proceedings paper
   journal = {Advances in Neural Information Processing Systems},
   volume  = {38},
   pages   = {126296--126325},
-  year    = {2026}
+  year    = {2025}
 }
